@@ -9,7 +9,7 @@ echo "deb http://apt.sonarr.tv/ master main" > /etc/apt/sources.list.d/sonarr.li
 #apt-add-repository ppa:mc3man/trusty-media -y
 apt-get update -q && \
 apt-get install $APTLIST -qy && \
-#apt-get install python-pip -qy
+apt-get install python-pip -qy
 #-get install ffmpeg -qy
 apt-get clean && \
 rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
