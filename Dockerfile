@@ -24,14 +24,14 @@ apt-get clean && \
 #pip install subliminal && \
 #pip install deluge-client && \
 #pip install qtfaststart && \
-#rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 
 #Adding Custom files
 ADD init/ /etc/my_init.d/
 ADD services/ /etc/service/
-# RUN chmod -v +x /etc/service/*/run /etc/my_init.d/*.sh
-RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+RUN chmod -v +x /etc/service/*/run /etc/my_init.d/*.sh
+# later added RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
  
 
