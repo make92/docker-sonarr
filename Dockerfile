@@ -20,7 +20,7 @@ pip install babelfish && \
 pip install "guessit<2" && \
 pip install subliminal && \
 pip install deluge-client && \
-#pip install qtfaststart && \
+pip install qtfaststart && \
 rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 
