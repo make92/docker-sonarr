@@ -6,11 +6,11 @@ ENV APTLIST="libmono-cil-dev python nzbdrone"
 # Configure nzbdrone's apt repository
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys FDA5DFFC && \
 echo "deb http://apt.sonarr.tv/ master main" > /etc/apt/sources.list.d/sonarr.list && \
-#apt-add-repository ppa:mc3man/trusty-media -y
+apt-add-repository ppa:mc3man/trusty-media -y && \
 apt-get update -q && \
 apt-get install $APTLIST -qy && \
-apt-get install python-pip -qy
-#-get install ffmpeg -qy
+apt-get install python-pip -qy && \
+apt-get install ffmpeg -qy && \
 apt-get clean && \
 rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 #ln -sf /opt/ffmpeg/bin/ffmpeg /usr/bin/ffmpeg
