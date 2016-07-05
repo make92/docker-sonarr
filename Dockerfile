@@ -14,8 +14,8 @@ apt-get install ffmpeg -qy && \
 apt-get clean && \
 curl https://bootstrap.pypa.io/ez_setup.py -O | python && \
 pip install requests && \
-#pip install requests[security] && \
-#pip install requests-cache && \
+pip install requests[security] && \
+pip install requests-cache && \
 #pip install babelfish && \
 #pip install "guessit<2" && \
 #pip install subliminal && \
