@@ -12,17 +12,16 @@ apt-get install $APTLIST -qy && \
 apt-get install python-pip -qy && \
 apt-get install ffmpeg -qy && \
 apt-get clean && \
-curl https://bootstrap.pypa.io/ez_setup.py -O - | python && \
-pip install requests && \
-pip install requests[security] && \
-pip install requests-cache && \
-pip install babelfish && \
-pip install "guessit<2" && \
-pip install subliminal && \
-pip install deluge-client && \
-pip install qtfaststart && \
+curl https://bootstrap.pypa.io/ez_setup.py -O | python && \
+#pip install requests && \
+#pip install requests[security] && \
+#pip install requests-cache && \
+#pip install babelfish && \
+#pip install "guessit<2" && \
+#pip install subliminal && \
+#pip install deluge-client && \
+#pip install qtfaststart && \
 rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-# ln -sf /opt/ffmpeg/bin/ffmpeg /usr/bin/ffmpeg && \
 
 
 #Adding Custom files
