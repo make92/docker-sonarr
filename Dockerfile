@@ -22,7 +22,7 @@ pip install subliminal && \
 pip install deluge-client && \
 pip install qtfaststart && \
 rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-ln -sf /opt/ffmpeg/bin/ffmpeg /usr/bin/ffmpeg && \
+# ln -sf /opt/ffmpeg/bin/ffmpeg /usr/bin/ffmpeg && \
 
 
 #Adding Custom files
