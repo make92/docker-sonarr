@@ -1,14 +1,23 @@
-# Use phusion/baseimage as base image. To make your builds reproducible, make
-# sure you lock down to a specific version, not to `latest`!
-# See https://github.com/phusion/baseimage-docker/blob/master/Changelog.md for
-# a list of version numbers.
-FROM phusion/baseimage:0.9.18
+FROM linuxserver/baseimage
+MAINTAINER Stian Larsen <lonixx@gmail.com>
+
+ENV APTLIST="libmono-cil-dev python nzbdrone"
+
+# Configure nzbdrone's apt repository
+RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys FDA5DFFC && \
+echo "deb http://apt.sonarr.tv/ master main" > /etc/apt/sources.list.d/sonarr.list && \
+apt-get update -q && \
+apt-get install $APTLIST -qy && \
+apt-get clean && \
+rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 
-# Use baseimage-docker's init system.
-CMD ["/sbin/my_init"]
+#Adding Custom files
+ADD init/ /etc/my_init.d/
+ADD services/ /etc/service/
+RUN chmod -v +x /etc/service/*/run /etc/my_init.d/*.sh
+ 
 
-# ...put your own build instructions here...
-
-# Clean up APT when done.
-RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+#Ports and Volumes
+VOLUME /config /downloads /tv
+EXPOSE 8989
